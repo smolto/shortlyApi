@@ -3,10 +3,11 @@ const mongoose = require("mongoose");
 const express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
-const { findByHash, createHash, findByOriginalUrl } = require("./utils");
+const { findByHash, createHash, findByOriginalUrl } = require("../utils");
 const app = express();
 
 app.use(cors());
+app.use(express.static("public"));
 
 const port = process.env.PORT;
 const uri = process.env.MONGO_DB_URL;
